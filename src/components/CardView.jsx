@@ -13,10 +13,10 @@ function CardView({list, setList}) {
             const updatedList = copyList.map((item) => {
                 if (item.name === taskToUpdate) {
                     const newItem = {...item}
-                    return {name: newItem.name, completed: !newItem.completed}
+                    return {name: newItem.name, completed: !newItem.completed, category:newItem.category}
                 } else {
                     const newItem = {...item}
-                    return {name: newItem.name, completed: newItem.completed}
+                    return {name: newItem.name, completed: newItem.completed, category:newItem.category}
                 }
             })
             return updatedList
