@@ -49,30 +49,19 @@ function DisplayList ({list, setList}) {
             </thead>
             <tbody>
             {list.map((task) => {
-                if (task.completed) {
+                 
                     return(<tr key={task.name}><td>{task.name}</td>
-                        <td className="complete">✅</td>
+                        <td className="complete">{task.completed ? '✅' : '❌'}</td>
                         <td className="col3"><button onClick={
                             e => {changeCompletion(e, task.name)}
-                        } className="mark" type="button">Undo</button></td>
+                        } className="mark" type="button">{task.completed ? 'Undo' : 'Complete'}</button></td>
                         <td className="col4"><button onClick={
                             e => {deleteTask(e, task.name)}
                         } >Delete</button></td>
                       </tr> 
                     )
-                } else {
-                    return (<tr key={task.name}><td>{task.name}</td>
-                        <td className="complete">❌</td>
-                        <td className="col3"><button onClick={
-                            e => {changeCompletion(e, task.name)}
-                        } className="mark" type="button">Complete</button></td>
-                        <td className="col4"><button onClick={
-                            e => {deleteTask(e, task.name)}
-                        }>Delete</button></td>
-
-                      </tr>  )
-                }
-            })}
+                } 
+            )}
             </tbody>
         </table>
     </section>
