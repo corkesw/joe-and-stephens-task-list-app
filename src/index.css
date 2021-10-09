@@ -260,3 +260,31 @@ input:checked + .slider:before {
   margin-top: 50px;
   margin-left: 50px;
 }
+
+.cardview {
+  display: flex;
+  /* justify-content:; */
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding:10px;
+  /* margin: 10px; */
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  overflow: auto;
+  margin: 10px;
+  background-color: beige;
+}
+
+.card button {
+  background-color: #5be65b;
+  font-size: 8px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+}
