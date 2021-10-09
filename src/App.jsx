@@ -1,6 +1,6 @@
 import AddTask from './components/AddTask';
 import './App.css';
-import DisplayList from './components/DisplayList';
+// import DisplayList from './components/DisplayList';
 import Header from './components/Header';
 import {useState} from 'react';
 import Footer from './components/Footer'
