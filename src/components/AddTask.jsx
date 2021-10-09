@@ -6,9 +6,7 @@ function AddTask ({setList, list}) {
     let [category, setCategory] = useState('')
 
     const categories = categoryList(list)
-    console.log(categories)
-
-
+   
     function handleSubmit(e) {
         e.preventDefault();
         setList((currList) => {
@@ -18,7 +16,7 @@ function AddTask ({setList, list}) {
             if (category==="add new") {
                 category = window.prompt("Enter new category")
             }
-            const taskToAdd = {name: newTask, completed: false, category: category}
+            const taskToAdd = {name: newTask, completed: false, category: category.toUpperCase()}
             let taskUnique = true
             list.forEach((item) => {
                 if (item.name === taskToAdd.name && item.category === taskToAdd.category) {

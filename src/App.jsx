@@ -8,9 +8,9 @@ import CardView from './components/CardView';
 
 function App() {
   const [list, setList] = useState([
-    {name: 'Wash the car', completed: false, category:'chores'},
-    {name: 'Do the dishes', completed: false, category:'chores'},
-    {name: 'Feed the dog', completed: true, category:'pet stuff'}
+    {name: 'Wash the car', completed: false, category:'CHORES'},
+    {name: 'Do the dishes', completed: false, category:'CHORES'},
+    {name: 'Feed the dog', completed: true, category:'PET STUFF'}
   ])
   const [view, setView] = useState('light')
 
