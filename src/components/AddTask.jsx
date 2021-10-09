@@ -19,8 +19,16 @@ function AddTask ({setList, list}) {
                 category = window.prompt("Enter new category")
             }
             const taskToAdd = {name: newTask, completed: false, category: category}
-            const updatedList = [...currList, taskToAdd];
-            return updatedList;
+            let taskUnique = true
+            list.forEach((item) => {
+                if (item.name === taskToAdd.name && item.category === taskToAdd.category) {
+                    taskUnique = false
+                }
+            })
+            if (!taskUnique) {
+                alert(`${taskToAdd.name} already exists in ${taskToAdd.category}`)
+            }
+            return (taskUnique ? [...currList, taskToAdd] : [...currList])
         })
         setNewTask('')
     }
