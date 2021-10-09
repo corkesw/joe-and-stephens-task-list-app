@@ -8,9 +8,9 @@ function Footer ({view, setView}) {
     }
 
     return <section>
-        <label class="switch">
+        <label className="switch">
   <input onChange={toggleView} type="checkbox" />
-  <span class="slider round"></span>
+  <span className="slider round"></span>
 </label>
     </section>
 }

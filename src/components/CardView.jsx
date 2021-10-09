@@ -29,14 +29,14 @@ function CardView({list, setList}) {
         <section className="sortedView">
             {categories.map((category) => {
 
-                return <div className={category}>
+                return <div key={category} className={category}>
                     <p>{category}</p>
 
 
             <section className="cardview">
             {list.map((task)=> {
                 if (task.category === category)
-                {return <div className="card">
+                {return <div key={`${category}${task.name}`} className="card">
                     <button onClick={
                             e => {changeCompletion(e, task.name)}
                     }>{task.completed ? '✅' : '❌'}</button> <button>⬆</button>
