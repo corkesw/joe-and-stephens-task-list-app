@@ -7,6 +7,9 @@ function AddTask ({setList}) {
     function handleSubmit(e) {
         e.preventDefault();
         setList((currList) => {
+            if (category==='') {
+                category='add new'
+            }
             if (category==="add new") {
                 category = window.prompt("Enter new category")
             }
