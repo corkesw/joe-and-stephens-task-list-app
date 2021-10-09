@@ -3,9 +3,7 @@ import { categoryList } from "./utils"
 function CardView({list, setList}) {
 
     const categories = categoryList(list)
-    console.log(categories)
-
-
+    
     function changeCompletion (e, taskName) {
         e.preventDefault()
     
@@ -24,6 +22,19 @@ function CardView({list, setList}) {
             return updatedList
         })
     }
+
+    function deleteTask (e, taskName) {
+        e.preventDefault()
+
+        setList((currList) => {
+            const taskToUpdate = taskName
+            const copyList = [...list]
+            const filteredList = copyList.filter((item) => {
+               return item.name !== taskToUpdate
+            })
+            return filteredList
+        })
+    }
     return (
 
         <section className="sortedView">
@@ -39,7 +50,9 @@ function CardView({list, setList}) {
                 {return <div key={`${category}${task.name}`} className="card">
                     <button onClick={
                             e => {changeCompletion(e, task.name)}
-                    }>{task.completed ? '✅' : '❌'}</button> <button>⬆</button>
+                    }>{task.completed ? '✅' : '❌'}</button> <button onClick={
+                        e => {deleteTask(e, task.name)}
+                    } >Delete</button>
                     <p>{task.name}</p>
                     
                     </div>}

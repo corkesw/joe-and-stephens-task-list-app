@@ -2,10 +2,12 @@ import {useState} from 'react';
 
 function AddTask ({setList}) {
     const [newTask, setNewTask] = useState('')
+    const [category, setCategory] = useState('')
+
     function handleSubmit(e) {
         e.preventDefault();
         setList((currList) => {
-            const taskToAdd = {name: newTask, completed: false}
+            const taskToAdd = {name: newTask, completed: false, category: category}
             const updatedList = [...currList, taskToAdd];
             return updatedList;
         })
@@ -18,6 +20,15 @@ function AddTask ({setList}) {
             <input type="text" required value={newTask} onChange={(e) => {
                 setNewTask(e.target.value)
             }} id="list-addition"/>
+            <label htmlFor="category">Category</label>
+                <select name="category" id="category" required value={category} onChange={
+                    (e) => {setCategory(e.target.value)}
+                }>
+                    <option value="pet stuff">pet stuff</option>
+                    <option value="chores">chores</option>
+                    <option value="work stuff">work stuff</option>
+                    <option value="add new">Add new...</option>
+                </select>
             <button className="button_slide slide_right">Submit Task</button>
         </form>
     </section>
