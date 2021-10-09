@@ -17,7 +17,7 @@ function App() {
   return (
    <div className={view}> 
    <Header />,
-   <AddTask setList={setList}/>,
+   <AddTask setList={setList} list={list}/>,
    {/* <DisplayList list={list} setList={setList}/> */}
    <CardView list={list} setList={setList}/>
    <Footer view={view} setView={setView}/>

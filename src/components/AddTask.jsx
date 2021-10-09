@@ -1,8 +1,13 @@
 import {useState} from 'react';
+import { categoryList } from './utils';
 
-function AddTask ({setList}) {
+function AddTask ({setList, list}) {
     const [newTask, setNewTask] = useState('')
     let [category, setCategory] = useState('')
+
+    const categories = categoryList(list)
+    console.log(categories)
+
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -31,9 +36,11 @@ function AddTask ({setList}) {
                     (e) => {setCategory(e.target.value)}
                 }>
                     <option value="add new" selected>Add new...</option>
-                    <option value="pet stuff">pet stuff</option>
-                    <option value="chores">chores</option>
-                    <option value="work stuff">work stuff</option>
+                    {
+                        categories.map((category) => {
+                            return <option key={category} value={category} selected>{category}</option>
+                        })
+                    }
                 </select>
             <button className="button_slide slide_right">Submit Task</button>
         </form>
