@@ -10,7 +10,12 @@ function App() {
   const [list, setList] = useState([
     {name: 'Wash the car', completed: false, category:'CHORES'},
     {name: 'Do the dishes', completed: false, category:'CHORES'},
-    {name: 'Feed the dog', completed: true, category:'PET STUFF'}
+    {name: 'Feed the dog', completed: true, category:'PET STUFF'},
+    {name: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro vel dolores iusto iure autem nulla ipsum velit, quis consequuntur eos quae numquam blanditiis labore rerum praesentium animi esse, corrupti eum', completed: true, category:'PET STUFF'}
+
+
+
+
   ])
   const [view, setView] = useState('light')
   const [categories, setCategories] = useState(['CHORES', 'PET STUFF'])
