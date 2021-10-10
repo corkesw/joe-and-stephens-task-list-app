@@ -13,6 +13,7 @@ function App() {
     {name: 'Feed the dog', completed: true, category:'PET STUFF'}
   ])
   const [view, setView] = useState('light')
+  const [categories, setCategories] = useState(['CHORES', 'PET STUFF'])
 
   return (
    <div className={view}> 
