@@ -41,10 +41,10 @@ function AddTask ({setList, list}) {
                 <select name="category" id="category" required value={category} onChange={
                     (e) => {setCategory(e.target.value)}
                 }>
-                    <option value="add new" selected>Add new...</option>
+                    <option value="add new">Add new...</option>
                     {
                         categories.map((category) => {
-                            return <option key={category} value={category} selected>{category}</option>
+                            return <option key={category} value={category}>{category}</option>
                         })
                     }
                 </select>
