@@ -1,4 +1,5 @@
 import { categoryList } from "./utils"
+import styles from "./CardView.module.css"
 
 function CardView({list, setList}) {
 
@@ -44,10 +45,10 @@ function CardView({list, setList}) {
                     <p>{category}</p>
 
 
-            <section className="cardview">
+            <section className={styles.cardview}>
             {list.map((task)=> {
                 if (task.category === category)
-                {return <div key={`${category}${task.name}`} className="card">
+                {return <div key={`${category}${task.name}`} className={styles.card}>
                     <button onClick={
                             e => {changeCompletion(e, task.name)}
                     }>{task.completed ? '✅' : '❌'}</button> <button onClick={

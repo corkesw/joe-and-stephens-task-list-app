@@ -1,0 +1,15 @@
+
+.addtaskcontainer form{
+ display: flex;
+ flex-direction: column;   
+ justify-content: center;
+ align-items: center;
+ padding-bottom: 30px;;
+ margin: 0px auto;
+ border-bottom: 5px solid black;
+}
+
+.dropdown {
+    width: 100%;
+    border-radius: 5px;
+}
