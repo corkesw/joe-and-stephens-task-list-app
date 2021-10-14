@@ -2,22 +2,21 @@ import {useState} from 'react';
 import { categoryList } from './utils';
 import styles from './AddTask.module.css';
 
-function AddTask ({setList, list}) {
+function AddTask ({setList, list, setCategories, categories}) {
     const [newTask, setNewTask] = useState('')
-    let [category, setCategory] = useState('')
-
-    const categories = categoryList(list)
+    const [category, setCategory] = useState('')
    
     function handleSubmit(e) {
         e.preventDefault();
+        let categoryToAdd = category
         setList((currList) => {
-            if (category==='') {
-                category='add new'
+            if (categoryToAdd==='') {
+                categoryToAdd='add new'
             }
-            if (category==="add new") {
-                category = window.prompt("Enter new category")
+            if (categoryToAdd==="add new") {
+                categoryToAdd = window.prompt("Enter new category")
             }
-            const taskToAdd = {name: newTask, completed: false, category: category.toUpperCase()}
+            const taskToAdd = {name: newTask, completed: false, category: categoryToAdd.toUpperCase()}
             let taskUnique = true
             list.forEach((item) => {
                 if (item.name === taskToAdd.name && item.category === taskToAdd.category) {
@@ -29,7 +28,12 @@ function AddTask ({setList, list}) {
             }
             return (taskUnique ? [...currList, taskToAdd] : [...currList])
         })
-        setNewTask('')
+        setNewTask('');
+        if (!category.includes(categoryToAdd)) {
+            setCategories((currCategories) => {
+                return [...currCategories, categoryToAdd]
+            })
+        }
     }
     return (
 

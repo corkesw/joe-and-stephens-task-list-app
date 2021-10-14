@@ -8,7 +8,6 @@
   border: 2px solid black;
   border-radius: 10px;
   padding: 10px;
-  margin: 10px;
   height: 7em;
   min-width: 7em;
   max-width: 7em;
@@ -20,7 +19,30 @@
   flex-grow: 1;
 }
 
+.importantcard {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  height: 7em;
+  min-width: 7em;
+  max-width: 7em;
+  display: inline-block;
+  overflow-wrap: break-word;
+  overflow: auto;
+  margin: 10px;
+  background-color: rgb(240, 121, 106);
+  flex-grow: 1;
+}
+
 .card button {
+  background-color: #5be65b;
+  font-size: 8px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+.importantcard button {
   background-color: #5be65b;
   font-size: 8px;
   border-radius: 10px;
